@@ -20,7 +20,7 @@
     color: white;
     font-size: 6vh;
     border: none;
-    margin-top: 65px;
+    margin-top: 123px;
     padding-top: 6px;
     cursor: pointer;
     -webkit-touch-callout: none;
@@ -64,7 +64,7 @@ body {
 }
 .gen_text {
     display: inline-block;
-    width: 80%;
+    width: 75%;
     margin: 0 auto;
     text-align: center;
 }
@@ -112,14 +112,12 @@ body {
 			</div>
 			
 		</div>
-		<button class="gen" onclick="get_navalny()">СГЕНЕРИРОВАТЬ</button>
+		<button class="gen" onclick="get_navalny()" id="btn">СГЕНЕРИРОВАТЬ</button>
 </div>
 </div>
 <script type="text/javascript">
-				var factor = 1/2;  // approximate width-to-height ratio
-			var div = $('.text_fixer');
-			div.css('font-size', div.width() / (div.text().length * factor) + 'px');
-
+	joxiActivate($('.gen_text').width(), 'fixer');
+	joxiActivate($('.gen_text').width()/2.7, 'btn');
 </script>
 </body>
 </html>
