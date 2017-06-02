@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>GENERATE NAVALNY</title>
@@ -16,30 +18,31 @@
     font-family: 'GraphikLC';
     background: #ef4b49;
     color: white;
-    font-size: -webkit-xxx-large;
+    font-size: 4vh;
     border: none;
     margin-top: 65px;
     padding-top: 6px;
     cursor: pointer;
-  -webkit-touch-callout: none;
+    -webkit-touch-callout: none;
     -webkit-user-select: none;
-     -khtml-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
+
 .navalny_name {
     text-decoration: none;
     font-family: 'GraphikLC';
     color: white;
-    font-size: 8vw;
+    //font-size: 8vw;
     text-transform: uppercase;
 }
 .navalny_year {
     text-decoration: none;
     font-family: 'GraphikLC';
     color: #ef4b49;
-    font-size: 8vw;
+    //font-size: 8vw;
     text-transform: uppercase;
 }
 body {
@@ -48,13 +51,15 @@ body {
     text-align: center;
 
 }
-.main_parent{
-	  position: absolute;
-	  top: 50%;
-	  transform: translateY(-50%);
+.main_parent {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
-.main_container{
-
+.main_container {
+    /* width: 100%; */
+    text-align: center;
 }
 .gen_text {
     display: inline-block;
@@ -63,8 +68,8 @@ body {
     text-align: center;
 }
 .text_fixer {
-    display: inline;
-    width: 80%;
+    display: inline-block;
+    width: 90%;
 }
 
 
@@ -81,6 +86,9 @@ body {
 				];
 			var who_you_today = navray[getRandomInt(0, navray.length)];
 			document.getElementById('navalny').innerHTML = who_you_today;
+			var factor = 1/2.4;  // approximate width-to-height ratio
+			var div = $('.text_fixer');
+			div.css('font-size', div.width() / (div.text().length * factor) + 'px');
 	}
 
 </script>
