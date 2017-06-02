@@ -32,14 +32,14 @@
     text-decoration: none;
     font-family: 'GraphikLC';
     color: white;
-    font-size: 60pt;
+    font-size: 8vw;
     text-transform: uppercase;
 }
 .navalny_year {
     text-decoration: none;
     font-family: 'GraphikLC';
     color: #ef4b49;
-    font-size: 60pt;
+    font-size: 8vw;
     text-transform: uppercase;
 }
 body {
@@ -48,9 +48,26 @@ body {
     text-align: center;
 
 }
-.main_container{
-	width: 100%;
+.main_parent{
+	  position: absolute;
+	  top: 50%;
+	  transform: translateY(-50%);
 }
+.main_container{
+
+}
+.gen_text {
+    display: inline-block;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.text_fixer {
+    display: inline;
+    width: 80%;
+}
+
+
 	</style>
 
 <script type="text/javascript">
@@ -70,13 +87,17 @@ body {
 </head>
 <body>
 
+<div class="main_parent">
 <div class="main_container">
 		<div class="gen_text">
-			<a href="https://2018.navalny.com" class="navalny_name"  id="navalny">навальный</a>
-			<a href="https://2018.navalny.com" class="navalny_year" > 20!8</a>
+			<div class="text_fixer">
+				<a href="https://2018.navalny.com" class="navalny_name"  id="navalny">навальный</a>
+				<a href="https://2018.navalny.com" class="navalny_year" > 20!8</a>
+			</div>
 			
 		</div>
 		<button class="gen" onclick="get_navalny()">СГЕНЕРИРОВАТЬ</button>
+</div>
 </div>
 
 </body>
