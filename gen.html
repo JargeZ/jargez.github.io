@@ -18,7 +18,7 @@
     font-family: 'GraphikLC';
     background: #ef4b49;
     color: white;
-    font-size: 4vh;
+    font-size: 6vh;
     border: none;
     margin-top: 65px;
     padding-top: 6px;
@@ -46,6 +46,7 @@
     text-transform: uppercase;
 }
 body {
+    overflow: hidden;
 	background: #009bb6;
     padding-top: 20%;
     text-align: center;
@@ -107,6 +108,11 @@ body {
 		<button class="gen" onclick="get_navalny()">СГЕНЕРИРОВАТЬ</button>
 </div>
 </div>
+<script type="text/javascript">
+				var factor = 1/2;  // approximate width-to-height ratio
+			var div = $('.text_fixer');
+			div.css('font-size', div.width() / (div.text().length * factor) + 'px');
 
+</script>
 </body>
 </html>
