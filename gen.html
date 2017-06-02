@@ -69,7 +69,7 @@ body {
 }
 .text_fixer {
     display: inline-block;
-    width: 90%;
+    width: 100%;
 }
 
 
@@ -86,7 +86,7 @@ body {
 				];
 			var who_you_today = navray[getRandomInt(0, navray.length)];
 			document.getElementById('navalny').innerHTML = who_you_today;
-			var factor = 1/2.4;  // approximate width-to-height ratio
+			var factor = 1/2;  // approximate width-to-height ratio
 			var div = $('.text_fixer');
 			div.css('font-size', div.width() / (div.text().length * factor) + 'px');
 	}
