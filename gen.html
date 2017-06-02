@@ -53,7 +53,7 @@ body {
 
 }
 .main_parent {
-    width: 100%;
+    width: 98%;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -64,13 +64,13 @@ body {
 }
 .gen_text {
     display: inline-block;
-    width: 100%;
+    width: 80%;
     margin: 0 auto;
     text-align: center;
 }
 .text_fixer {
     display: inline-block;
-    width: 100%;
+    //width: 100%;
 }
 
 
@@ -80,6 +80,12 @@ body {
 	function getRandomInt(min, max) {
 	  return Math.floor(Math.random() * (max - min)) + min;
 	}
+	function joxiActivate(width, blockName){
+	    const block = document.getElementById(blockName);
+	    const defaultWidth = block.offsetWidth;
+	    const percent = Math.round(width * 100 / defaultWidth) / 100;
+	    block.style.transform = 'scale('+ percent +')';
+	}
 	function get_navalny() {
 		var navray = new Array;
 		navray = [
@@ -87,9 +93,10 @@ body {
 				];
 			var who_you_today = navray[getRandomInt(0, navray.length)];
 			document.getElementById('navalny').innerHTML = who_you_today;
-			var factor = 1/2;  // approximate width-to-height ratio
-			var div = $('.text_fixer');
-			div.css('font-size', div.width() / (div.text().length * factor) + 'px');
+			//var factor = 1/2;  // approximate width-to-height ratio
+			//var div = $('.text_fixer');
+			//div.css('font-size', div.width() / (div.text().length * factor) + 'px');
+			joxiActivate($('.gen_text').width(), 'fixer');
 	}
 
 </script>
@@ -99,7 +106,7 @@ body {
 <div class="main_parent">
 <div class="main_container">
 		<div class="gen_text">
-			<div class="text_fixer">
+			<div class="text_fixer" id="fixer">
 				<a href="https://2018.navalny.com" class="navalny_name"  id="navalny">навальный</a>
 				<a href="https://2018.navalny.com" class="navalny_year" > 20!8</a>
 			</div>
