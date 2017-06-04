@@ -156,6 +156,10 @@ animation: 0.5s blet steps(13);
 	.butns{
 		margin-top: 101px;
 	}
+	.bleet_switch {
+	    width: 80px;
+	    height: 107px;
+	}
 }
 
 	</style>
@@ -180,6 +184,7 @@ animation: 0.5s blet steps(13);
 			$('#btn').html('СГЕНЕРИРОВАТЬ');
 			$('.bleet_switch').height('228px');
 		}else{ //вклчюаем
+			document.getElementById('navalny').innerHTML = document.getElementById('navalny').innerHTML.replace(/[аА]/g, 'э').replace(/[оО]/g, 'а');
 			$('#btn').html('СГЕНЕРИРАВЭТЬ');
 			$('.gen_text').addClass('blet');
 			setTimeout(function(){$('.gen_text').removeClass('blet')},800);
@@ -222,7 +227,7 @@ animation: 0.5s blet steps(13);
 			//var factor = 1/2;  // approximate width-to-height ratio
 			//var div = $('.text_fixer');
 			//div.css('font-size', div.width() / (div.text().length * factor) + 'px');
-			joxiActivate($('body').width()/1.2, 'fixer');
+			joxiActivate($('body').width()/1.3, 'fixer');
 	}
 
 </script>
@@ -261,7 +266,7 @@ animation: 0.5s blet steps(13);
 </div>
 </div>
 <script type="text/javascript">
-	joxiActivate($('body').width()/1.2, 'fixer');
+	joxiActivate($('body').width()/1.3, 'fixer');
 	//joxiActivate($('body').width()/1.2/2.7, 'btn');
 </script>
 
