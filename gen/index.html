@@ -98,6 +98,7 @@ body {
     font-size: 52px;
     transition: 0.3s;
     display: inline-block;
+    overflow: hidden;
 }
 .colors{
 	position: fixed;
@@ -145,7 +146,15 @@ body {
 90% { transform: translateX(4px) translateY(2px) }
 100% { transform: translateX(-0px) translateY(3px) }
 }
+@keyframes shift {
+0% {letter-spacing: -39px; opacity: 0;}
+10% {opacity: 1;}
+100% {letter-spacing: 0px; opacity: 1;}
+}
 
+.shift{
+animation: 1.2s shift;
+}
 .blet{
 animation: 0.5s blet steps(13);
 }
@@ -183,8 +192,11 @@ animation: 0.5s blet steps(13);
 			window.bleet = false;
 			$('#btn').html('СГЕНЕРИРОВАТЬ');
 			$('.bleet_switch').height('228px');
+			$('.gen_input').attr('placeholder', 'персональный навальный');
+			document.getElementById('navalny').innerHTML = document.getElementById('navalny').innerHTML.replace(/[эЭ]/g, 'а');
 		}else{ //вклчюаем
 			document.getElementById('navalny').innerHTML = document.getElementById('navalny').innerHTML.replace(/[аА]/g, 'э').replace(/[оО]/g, 'а');
+			$('.gen_input').attr('placeholder', 'персанэльный навэльный');
 			$('#btn').html('СГЕНЕРИРАВЭТЬ');
 			$('.gen_text').addClass('blet');
 			setTimeout(function(){$('.gen_text').removeClass('blet')},800);
@@ -222,6 +234,10 @@ animation: 0.5s blet steps(13);
 				who_you_today = who_you_today.replace(/[аА]/g, 'э').replace(/[оО]/g, 'а');
 				$('.gen_text').addClass('blet');
 				setTimeout(function(){$('.gen_text').removeClass('blet')},800);
+			}else{
+				$('#fixer').css('opacity', '0');
+				setTimeout(function(){$('#fixer').show();$('#fixer').addClass('shift')},200);
+				setTimeout(function(){$('#fixer').css('opacity', '1');$('#fixer').removeClass('shift')},1000);
 			}
 			document.getElementById('navalny').innerHTML = who_you_today;
 			//var factor = 1/2;  // approximate width-to-height ratio
