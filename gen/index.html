@@ -239,16 +239,14 @@ body {
 				$('#fixer').css('opacity', '0');
 				$('#fixer').removeClass('shift')
 				setTimeout(function(){$('#fixer').addClass('shift')},500);
-				//setTimeout(function(){
-				//	$('#fixer').show();
-				//	$('#fixer').addClass('shift')
-				//},200);
 			}
-			document.getElementById('navalny').innerHTML = who_you_today;
 			//var factor = 1/2;  // approximate width-to-height ratio
 			//var div = $('.text_fixer');
 			//div.css('font-size', div.width() / (div.text().length * factor) + 'px');
-			joxiActivate($('body').width()/1.3, 'fixer');
+			setTimeout(function(){
+				document.getElementById('navalny').innerHTML = who_you_today;
+				joxiActivate($('body').width()/1.3, 'fixer');
+			},200);
 	}
 
 </script>
