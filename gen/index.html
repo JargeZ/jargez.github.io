@@ -147,16 +147,17 @@ body {
 100% { transform: translateX(-0px) translateY(3px) }
 }
 @keyframes shift {
-0% {letter-spacing: -39px; opacity: 0;}
+0% {letter-spacing: -39px; opacity: 0 !important;}
 10% {opacity: 1;}
 100% {letter-spacing: 0px; opacity: 1;}
 }
 
 .shift{
-animation: 1.2s shift;
+	animation: 1.2s shift;
+	opacity: 1 !important;
 }
 .blet{
-animation: 0.5s blet steps(13);
+	animation: 0.5s blet steps(13);
 }
 @media (max-width: 1000px) {
 	.gen {
@@ -236,8 +237,12 @@ animation: 0.5s blet steps(13);
 				setTimeout(function(){$('.gen_text').removeClass('blet')},800);
 			}else{
 				$('#fixer').css('opacity', '0');
-				setTimeout(function(){$('#fixer').show();$('#fixer').addClass('shift')},200);
-				setTimeout(function(){$('#fixer').css('opacity', '1');$('#fixer').removeClass('shift')},1228);
+				$('#fixer').removeClass('shift')
+				setTimeout(function(){$('#fixer').addClass('shift')},500);
+				//setTimeout(function(){
+				//	$('#fixer').show();
+				//	$('#fixer').addClass('shift')
+				//},200);
 			}
 			document.getElementById('navalny').innerHTML = who_you_today;
 			//var factor = 1/2;  // approximate width-to-height ratio
