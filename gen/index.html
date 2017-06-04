@@ -30,6 +30,7 @@
     border-right: 1px solid #038197;
     font-size: 25px;
     color: #ccf;
+    outline: none;
 }
 
 .gen {
@@ -49,6 +50,11 @@
     user-select: none;
 }
 
+.navalny_name[contenteditable="true"]:active, 
+.navalny_name[contenteditable="true"]:focus{ 
+border:none; 
+outline:none; 
+}
 .navalny_name {
     text-decoration: none;
     font-family: 'GraphikLC';
@@ -93,6 +99,25 @@ body {
 	transition: 0.1s;
     display: inline-block;
     //width: 100%;
+}
+.colors{
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+.sw{
+	cursor: pointer;
+    width: 33px;
+    height: 33px;
+}
+.с_white{
+	background: white;
+}
+.с_red{
+	background: #ef4b49;;
+}
+.с_blue{
+	background: #009bb6;
 }
 @media (max-width: 1000px) {
 	.gen {
@@ -142,12 +167,28 @@ body {
 	}
 
 </script>
+<div class="colors">
+	<div onclick="	$('body').css('background', 'white')	;
+					$('.navalny_name').css('color', '#ef4b49')	;
+					$('.navalny_year').css('color', '#009bb6')	;
+					$('.gen').css('background', '#a0a0a0')	;" class="с_white sw"></div>
+
+	<div onclick="	$('body').css('background', '#009bb6');
+					$('.navalny_name').css('color', 'white')	;
+					$('.navalny_year').css('color', '#ef4b49')	;
+					$('.gen').css('background', '#ef4b49')	;" class="с_blue sw"></div>
+
+	<div onclick="	$('body').css('background', '#ef4b49');
+					$('.navalny_name').css('color', 'white')	;
+					$('.navalny_year').css('color', '#009bb6')	;
+					$('.gen').css('background', '#a40000')	;" class="с_red sw"></div>
+</div>
 <div class="main_parent">
 <div class="main_container">
 <!-- <script charset="utf-8" src="yopta.min.js"></script> -->
 		<div class="gen_text">
 			<div class="text_fixer" id="fixer">
-				<a href="https://2018.navalny.com" class="navalny_name"  id="navalny">навальный</a>
+				<a contenteditable="true" class="navalny_name"  id="navalny">навальный</a>
 				<a href="https://2018.navalny.com" class="navalny_year" > 20!8</a>
 			</div>
 			
