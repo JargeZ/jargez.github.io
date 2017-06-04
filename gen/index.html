@@ -119,9 +119,16 @@ body {
 .с_blue{
 	background: #009bb6;
 }
+.butns{
+	z-index: 5;
+	margin-top: 228px;
+}
 @media (max-width: 1000px) {
 	.gen {
 		font-size: 205%;
+	}
+	.butns{
+		margin-top: 101px;
 	}
 }
 
@@ -193,7 +200,7 @@ body {
 			</div>
 			
 		</div>
-		<div style="z-index: 5;margin-top: 228px;">
+		<div class="butns">
 			<button class="gen" onclick="get_navalny()" id="btn">СГЕНЕРИРОВАТЬ</button>
 			<input class="gen_input" onkeyup="get_navalny($(this).val());" type="text" placeholder="персональный навальный"></button>
 		</div>
